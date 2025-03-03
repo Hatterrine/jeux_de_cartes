@@ -4,14 +4,18 @@ body {
             margin: 90px;
             padding: 0;
         }
-        .container {
+h1      {
+            text-align: center; 
+            margin-top: 20px;
+}
+.container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             padding: 20px;
         }
-        .card {
+.card {
             width: 200px;
             border: 2px solid #ccc;
             border-radius: 10px;
@@ -21,16 +25,16 @@ body {
             text-align: center;
             cursor: pointer;
         }
-        .card img {
+.card img {
             width: 100%;
             height: auto;
         }
-        .card h3 {
+.card h3 {
             margin: 10px 0;
             font-size: 1.2em;
             color: #333;
         }
-        .details {
+.details {
             margin: 20px auto;
             width: 80%;
             max-width: 500px;
@@ -41,17 +45,17 @@ body {
             padding: 20px;
             text-align: center;
         }
-        .details img {
+.details img {
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
-        .details h3 {
+.details h3 {
             margin: 10px 0;
             font-size: 1.5em;
             color: #333;
         }
-        .details p {
+.details p {
             font-size: 1em;
             color: #666;
         }
