@@ -51,19 +51,25 @@
 
             // Ajout d'un gestionnaire d'événement pour afficher les détails
             cardElement.addEventListener('click', () => {
-                let i = 1
-                const detail = details[index];
-                detailsImage.src = card.image;
-                detailsName.textContent = detail.name;
-                detailsGenre.textContent = "Genre : "+detail.genre;
-                detailsAnniv.textContent = "Anniversaire : "+detail.anniv;
-                detailsAtk.textContent = detail.atk;
-                detailsDef.textContent = detail.def;
-                detailsAura.textContent = "Niveau d'aura : "+detail.aura;
-                detailsDescription.textContent = detail.description;
-                detailsElement.style.display = 'block';
-            });
+        // Vider le conteneur avant d'ajouter un nouveau détail
+        detailsContainer.innerHTML = '';
 
-            // Ajout de la carte au conteneur
+        // Cloner le template
+        const clone = detailsTemplate.content.cloneNode(true);
+
+        // Remplissage des détails avec les bonnes classes
+        clone.querySelector('.details-image').src = card.image;
+        clone.querySelector('.details-name').textContent = card.name;
+        clone.querySelector('.details-genre').textContent = "Genre : " + card.genre;
+        clone.querySelector('.details-anniv').textContent = "Anniversaire : " + card.anniv;
+        clone.querySelector('.details-atk').textContent = card.atk;
+        clone.querySelector('.details-def').textContent = card.def;
+        clone.querySelector('.details-aura').textContent = "Niveau d'aura : " + card.aura;
+        clone.querySelector('.details-description').textContent = card.description;
+
+        // Ajouter les détails au conteneur
+        detailsContainer.appendChild(clone);
+    });
+
             cardContainer.appendChild(cardElement);
-        });
+});
