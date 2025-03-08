@@ -70,7 +70,7 @@
   
   //remplir cet element HTML a l'aide du code défini par le template de contenu
   carte.innerHTML = contenu;
-  carte.classList.add("details");
+  carte.classList.add("card");
   //renvoyer la valeur de la carte créer
   return carte;
 }
