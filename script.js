@@ -27,11 +27,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
         function creerCarte(cartes){
-  let listTemplates = cartes.toppings.map(topping =>`<li>${topping}</li>`)
+  
      console.log("listTemplates: "+listTemplates)
   
-  let htmlListToppings = listTemplates.join("")
-  console.log("htmlListToppings: "+htmlListToppings)
   
 
   let iconefille;
@@ -63,9 +61,6 @@
       <p class="annive">${cartes.anniv} gr</p>
       <p class="citation">${cartes.atk} parts</p>
       <p class="auras">Auras :</p>
-      <ul class="toppings">
-       ${htmlListToppings}
-      </ul>
       <p class="auraa">${cartes.aura}</p>
     <p classs="atouts">${cartes.def}</p>
     <p class="descr"> ${cartes.description}</p>
