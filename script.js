@@ -22,58 +22,7 @@
 
        
 
-        const cardContainer = document.getElementById('cardContainer');
-
-        // Conteneur des détails
-        const detailsElement = document.getElementById('details');
-        const detailsImage = document.getElementById('detailsImage');
-        const detailsName = document.getElementById('detailsName');
-        const detailsAtk = document.getElementById('detailsAtk');
-        const detailsDef = document.getElementById('detailsDef');
-        const detailsDescription = document.getElementById('detailsDescription');
-
-        // Génération des cartes
-        details.forEach((card, index) => {
-            // Création des éléments
-            const cardElement = document.createElement('div');
-            cardElement.className = 'card';
-
-            const imgElement = document.createElement('img');
-            imgElement.src = card.image;
-            imgElement.alt = `Carte de ${card.name}`;
-
-            const nameElement = document.createElement('h3');
-            nameElement.textContent = card.name;
-
-            // Assemblage de la carte
-            cardElement.appendChild(imgElement);
-            cardElement.appendChild(nameElement);
-
-            // Ajout d'un gestionnaire d'événement pour afficher les détails
-            cardElement.addEventListener('click', () => {
-        // Vider le conteneur avant d'ajouter un nouveau détail
-        detailsContainer.innerHTML = '';
-
-        // Cloner le template
-        const clone = detailsTemplate.content.cloneNode(true);
-
-        // Remplissage des détails avec les bonnes classes
-        clone.querySelector('.details-image').src = card.image;
-        clone.querySelector('.details-name').textContent = card.name;
-        clone.querySelector('.details-genre').textContent = "Genre : " + card.genre;
-        clone.querySelector('.details-anniv').textContent = "Anniversaire : " + card.anniv;
-        clone.querySelector('.details-atk').textContent = card.atk;
-        clone.querySelector('.details-def').textContent = card.def;
-        clone.querySelector('.details-aura').textContent = "Niveau d'aura : " + card.aura;
-        clone.querySelector('.details-description').textContent = card.description;
-
-        // Ajouter les détails au conteneur
-        detailsContainer.appendChild(clone);
-    });
-
-            cardContainer.appendChild(cardElement);
-});
-
+        
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
