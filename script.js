@@ -17,7 +17,7 @@
             { name: "Sophia", image: "image/sophia.png",gas: false, fille: true,  anniv: "21/12" ,atk: "Citation : << La seule limite est l'imagination >>",  def:"Atouts : Elle est observatrice",aura: 5000000000000000,description: "Wigardium Leviosa !"},
             { name: "Thais", image: "image/thais.png",gas: false, fille: true,  anniv: "25/08" ,atk: "Citation : << Il m'entraine au bout de la nuits. >>",def:"Atouts : A de bon goût musicaux",aura: 8465174854154454,description: "Les démons de minuits"},
             { name: "Toni", image: "image/toni.png",gas: true, fille: false, anniv: "01/12" ,atk: "Citation : << . . . >>",def:"Atouts : Est imprévisible et invisible",aura: 56498798468444987456,description: ". . ."},
-            { name: "Valiavo", image: "image/val.png",ggas: true, fille: false, anniv: "26/10" ,atk: "Citation : << En vraie je veux rentrer chez moi. >> ", def:"Atouts : Brawlstars",aura: 9898989,description: "Mais il se rendort super vite en général."},
+            { name: "Valiavo", image: "image/val.png",gas: true, fille: false, anniv: "26/10" ,atk: "Citation : << En vraie je veux rentrer chez moi. >> ", def:"Atouts : Brawlstars",aura: 9898989,description: "Mais il se rendort super vite en général."},
         ];
 
        
@@ -70,7 +70,7 @@
   
   //remplir cet element HTML a l'aide du code défini par le template de contenu
   carte.innerHTML = contenu;
-  carte.classList.add("card");
+  carte.classList.add("details");
   //renvoyer la valeur de la carte créer
   return carte;
 }
