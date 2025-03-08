@@ -28,9 +28,6 @@
 
         function creerCarte(cartes){
   
-     console.log("listTemplates: "+listTemplates)
-  
-  
 
   let iconefille;
   let iconegas;
