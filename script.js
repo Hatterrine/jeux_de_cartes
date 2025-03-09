@@ -93,3 +93,40 @@ global_button.addEventListener("click", function () {
 
         });
 });
+
+
+// Créer l'élément .detail qui affichera la carte agrandie
+let detailCard = document.createElement("div");
+detailCard.classList.add("details", "hidden"); // Initialement cachée
+document.body.appendChild(detailCard);
+
+// Fonction pour créer la carte en grand
+function afficherDetail(cartes) {
+    let contenuDetail = `
+        <div class="detail-container">
+            <button class="close-detail">❌</button>
+            <img src="${cartes.image}" class="detail-img">
+            <h1 class="detail-nom">${cartes.name} ${cartes.fille} ${iconefille}${iconegas}</h1>
+            <p class="detail-anniv">🎂 ${cartes.anniv}</p>
+            <p class="detail-citation">💬 ${cartes.atk}</p>
+            <p class="detail-atouts">⭐ ${cartes.def}</p>
+            <p class="detail-aura">🌟 Aura : ${cartes.aura}</p>
+            <p class="detail-description">${cartes.description}</p>
+        </div>
+    `;
+
+    detailCard.innerHTML = contenuDetail;
+    detailCard.classList.remove("hidden");
+
+    // Ajouter l'event pour fermer la carte
+    document.querySelector(".close-detail").addEventListener("click", function () {
+        detailCard.classList.add("hidden");
+    });
+}
+
+// Ajouter un eventListener sur chaque carte créée
+document.querySelectorAll(".card").forEach((carte, index) => {
+    carte.addEventListener("click", function () {
+        afficherDetail(details[index]); // Affiche la carte correspondante
+    });
+});
