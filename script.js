@@ -53,10 +53,10 @@
   //template destinée à stocker le contenu de l'élément en utilisant les valeurs précisées par les variables entourées par ${}
   let contenu = `
     <img src="${cartes.image}">
-    <h1 class="nom">${cartes.name}${iconefille}${iconegas}</h1>
+    <h1 class="nom">${cartes.name} ${iconefille}${iconegas}</h1>
     <div class="container">
       <p class="annive">${cartes.anniv} gr</p>
-      <p class="citation">${cartes.atk} parts</p>
+      <p class="citation">${cartes.atk}</p>
       <p class="auras">Auras :</p>
       <p class="auraa">${cartes.aura}</p>
     <p classs="atouts">${cartes.def}</p>
