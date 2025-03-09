@@ -94,41 +94,20 @@ global_button.addEventListener("click", function () {
         });
 });
 
-function afficherDetail(cartes) {
-    // Vérifier si les icônes doivent être affichées
-    let iconefille = cartes.fille ? "👧" : "";
-    let iconegas = cartes.gas ? "👦" : "";
 
-    // Créer le contenu de la carte détaillée
-    let contenuDetail = `
-        <div class="detail-overlay">
-            <div class="detail-container">
-                <button class="close-detail">❌</button>
-                <img src="${cartes.image}" class="detail-img">
-                <h1 class="detail-nom">${cartes.name} ${iconefille}${iconegas}</h1>
-                <p class="detail-anniv">🎂 Anniversaire : ${cartes.anniv}</p>
-                <p class="detail-citation">💬 ${cartes.atk}</p>
-                <p class="detail-atouts">⭐ ${cartes.def}</p>
-                <p class="detail-aura">🌟 Aura : ${cartes.aura}</p>
-                <p class="detail-description">${cartes.description}</p>
-            </div>
-        </div>
-    `;
+function ajouterEvenementCarte() {
+    // Sélectionner toutes les cartes
+    let cartes = document.querySelectorAll(".card");
 
-    // Ajouter le contenu à la carte en détail et l'afficher
-    detailCard.innerHTML = contenuDetail;
-    detailCard.classList.remove("hidden");
-
-    // Fermer la carte quand on clique sur ❌
-    document.querySelector(".close-detail").addEventListener("click", function () {
-        detailCard.classList.add("hidden");
-    });
-
-    // Ajouter un effet pour fermer en cliquant en dehors de la carte
-    document.querySelector(".detail-overlay").addEventListener("click", function (event) {
-        if (event.target.classList.contains("detail-overlay")) {
-            detailCard.classList.add("hidden");
-        }
+    // Ajouter un événement de clic à chaque carte
+    cartes.forEach(carte => {
+        carte.addEventListener("click", function() {
+            // Enlever la classe "agrandie" de toutes les cartes
+            cartes.forEach(c => c.classList.remove("agrandie"));
+            
+            // Ajouter la classe "agrandie" à la carte cliquée
+            carte.classList.add("detail");
+        });
     });
 }
 
