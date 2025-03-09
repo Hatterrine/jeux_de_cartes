@@ -51,7 +51,7 @@ h1      {
 
 
 
-.details {
+.detail {
             margin: 20px auto;
             width: 80%;
             max-width: 500px;
@@ -62,17 +62,17 @@ h1      {
             padding: 20px;
             text-align: center;
         }
-.details img {
+.detail img {
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
-.details h3 {
+.detail h3 {
             margin: 10px 0;
             font-size: 1.5em;
             color: #333;
         }
-.details p {
+.detail p {
             font-size: 1em;
             color: #666;
         }
