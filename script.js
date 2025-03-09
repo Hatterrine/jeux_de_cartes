@@ -84,7 +84,7 @@ for (let i = 0; i < details.length; i++) {
   document.querySelector("main").appendChild(carte);
 }
 
-let global_button : document.getElementById("bouton");
+let global_button = document.getElementById("bouton");
 global_button.addEventListener("click", function () {
     let elementsAMasquer = document.querySelectorAll(".annive, .citation, .auras, .auraa, .atouts, .descr");
 
