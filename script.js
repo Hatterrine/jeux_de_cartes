@@ -106,7 +106,7 @@ function afficherDetail(cartes) {
         <div class="detail-container">
             <button class="close-detail">❌</button>
             <img src="${cartes.image}" class="detail-img">
-            <h1 class="detail-nom">${cartes.name} ${cartes.fille} ${iconefille}${iconegas}</h1>
+            <h1 class="detail-nom">${cartes.name}  ${iconefille}${iconegas}</h1>
             <p class="detail-anniv">🎂 ${cartes.anniv}</p>
             <p class="detail-citation">💬 ${cartes.atk}</p>
             <p class="detail-atouts">⭐ ${cartes.def}</p>
