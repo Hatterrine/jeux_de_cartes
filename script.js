@@ -103,7 +103,7 @@ function ajouterEvenementCarte() {
     cartes.forEach(carte => {
         carte.addEventListener("click", function() {
             // Enlever la classe "agrandie" de toutes les cartes
-            cartes.forEach(c => c.classList.remove("agrandie"));
+            cartes.forEach(c => c.classList.remove("card"));
             
             // Ajouter la classe "agrandie" à la carte cliquée
             carte.classList.add("detail");
