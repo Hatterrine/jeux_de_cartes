@@ -94,39 +94,41 @@ global_button.addEventListener("click", function () {
         });
 });
 
-
-// Créer l'élément .detail qui affichera la carte agrandie
-let detailCard = document.createElement("div");
-detailCard.classList.add("details", "hidden"); // Initialement cachée
-document.body.appendChild(detailCard);
-
-// Fonction pour créer la carte en grand
 function afficherDetail(cartes) {
+    // Vérifier si les icônes doivent être affichées
+    let iconefille = cartes.fille ? "👧" : "";
+    let iconegas = cartes.gas ? "👦" : "";
+
+    // Créer le contenu de la carte détaillée
     let contenuDetail = `
-        <div class="detail-container">
-            <button class="close-detail">❌</button>
-            <img src="${cartes.image}" class="detail-img">
-            <h1 class="detail-nom">${cartes.name}  ${iconefille}${iconegas}</h1>
-            <p class="detail-anniv">🎂 ${cartes.anniv}</p>
-            <p class="detail-citation">💬 ${cartes.atk}</p>
-            <p class="detail-atouts">⭐ ${cartes.def}</p>
-            <p class="detail-aura">🌟 Aura : ${cartes.aura}</p>
-            <p class="detail-description">${cartes.description}</p>
+        <div class="detail-overlay">
+            <div class="detail-container">
+                <button class="close-detail">❌</button>
+                <img src="${cartes.image}" class="detail-img">
+                <h1 class="detail-nom">${cartes.name} ${iconefille}${iconegas}</h1>
+                <p class="detail-anniv">🎂 Anniversaire : ${cartes.anniv}</p>
+                <p class="detail-citation">💬 ${cartes.atk}</p>
+                <p class="detail-atouts">⭐ ${cartes.def}</p>
+                <p class="detail-aura">🌟 Aura : ${cartes.aura}</p>
+                <p class="detail-description">${cartes.description}</p>
+            </div>
         </div>
     `;
 
+    // Ajouter le contenu à la carte en détail et l'afficher
     detailCard.innerHTML = contenuDetail;
     detailCard.classList.remove("hidden");
 
-    // Ajouter l'event pour fermer la carte
+    // Fermer la carte quand on clique sur ❌
     document.querySelector(".close-detail").addEventListener("click", function () {
         detailCard.classList.add("hidden");
     });
+
+    // Ajouter un effet pour fermer en cliquant en dehors de la carte
+    document.querySelector(".detail-overlay").addEventListener("click", function (event) {
+        if (event.target.classList.contains("detail-overlay")) {
+            detailCard.classList.add("hidden");
+        }
+    });
 }
 
-// Ajouter un eventListener sur chaque carte créée
-document.querySelectorAll(".card").forEach((carte, index) => {
-    carte.addEventListener("click", function () {
-        afficherDetail(details[index]); // Affiche la carte correspondante
-    });
-});
