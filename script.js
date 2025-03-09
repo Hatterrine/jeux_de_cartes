@@ -55,7 +55,7 @@
     <img src="${cartes.image}">
     <h1 class="nom">${cartes.name} ${iconefille}${iconegas}</h1>
     <div class="container">
-      <p class="annive">${cartes.anniv} gr</p>
+      <p class="annive">${cartes.anniv}</p>
       <p class="citation">${cartes.atk}</p>
       <p class="auras">Auras :</p>
       <p class="auraa">${cartes.aura}</p>
