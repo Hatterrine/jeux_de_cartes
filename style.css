@@ -40,6 +40,17 @@ h1      {
             font-size: 1.2em;
             color: #333;
         }
+
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
 .details {
             margin: 20px auto;
             width: 80%;
