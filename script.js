@@ -101,14 +101,20 @@ function ajouterEvenementCarte() {
     // Ajouter un événement de clic à chaque carte
     cartes.forEach(carte => {
         carte.addEventListener("click", function() {
-            // Enlever la classe "agrandie" de toutes les cartes
-            cartes.forEach(c => c.classList.remove("detail"));
-
-            // Ajouter la classe "detail" à la carte cliquée
-            carte.classList.add("detail");
+            // Vérifier si la carte a déjà la classe "detail"
+            if (carte.classList.contains("detail")) {
+                // Si oui, on la retire
+                carte.classList.remove("detail");
+            } else {
+                // Sinon, on enlève la classe "detail" de toutes les cartes
+                cartes.forEach(c => c.classList.remove("detail"));
+                // Et on ajoute la classe "detail" à la carte cliquée
+                carte.classList.add("detail");
+            }
         });
     });
 }
+
 
 // Créer les cartes et les ajouter au DOM
 for (let i = 0; i < details.length; i++) {
