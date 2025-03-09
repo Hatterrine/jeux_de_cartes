@@ -59,7 +59,7 @@
       <p class="citation">${cartes.atk}</p>
       <p class="auras">Auras :</p>
       <p class="auraa">${cartes.aura}</p>
-    <p classs="atouts">${cartes.def}</p>
+    <p class="atouts">${cartes.def}</p>
     <p class="descr"> ${cartes.description}</p>
      
     </div>
@@ -74,13 +74,6 @@
   //renvoyer la valeur de la carte créer
   return carte;
 }
-
-// Ajouter un eventListener sur chaque carte créée
-document.querySelectorAll(".card").forEach((carte, index) => {
-    carte.addEventListener("click", function () {
-        afficherDetail(details[index]); // Affiche la carte correspondante
-    });
-});
 
 //pour chaque élément numéroté i de la liste de pizza
 for (let i = 0; i < details.length; i++) {
@@ -104,7 +97,7 @@ global_button.addEventListener("click", function () {
 
 // Créer l'élément .detail qui affichera la carte agrandie
 let detailCard = document.createElement("div");
-detailCard.classList.add("detail", "hidden"); // Initialement cachée
+detailCard.classList.add("details", "hidden"); // Initialement cachée
 document.body.appendChild(detailCard);
 
 // Fonction pour créer la carte en grand
@@ -131,4 +124,9 @@ function afficherDetail(cartes) {
     });
 }
 
-
+// Ajouter un eventListener sur chaque carte créée
+document.querySelectorAll(".card").forEach((carte, index) => {
+    carte.addEventListener("click", function () {
+        afficherDetail(details[index]); // Affiche la carte correspondante
+    });
+});
