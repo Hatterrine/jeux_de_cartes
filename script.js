@@ -94,7 +94,6 @@ global_button.addEventListener("click", function () {
         });
 });
 
-
 function ajouterEvenementCarte() {
     // Sélectionner toutes les cartes
     let cartes = document.querySelectorAll(".card");
@@ -103,11 +102,20 @@ function ajouterEvenementCarte() {
     cartes.forEach(carte => {
         carte.addEventListener("click", function() {
             // Enlever la classe "agrandie" de toutes les cartes
-            cartes.forEach(c => c.classList.remove("card"));
-            
-            // Ajouter la classe "agrandie" à la carte cliquée
+            cartes.forEach(c => c.classList.remove("detail"));
+
+            // Ajouter la classe "detail" à la carte cliquée
             carte.classList.add("detail");
         });
     });
 }
+
+// Créer les cartes et les ajouter au DOM
+for (let i = 0; i < details.length; i++) {
+  let carte = creerCarte(details[i]);
+  document.querySelector("main").appendChild(carte);
+}
+
+// Ajouter l'événement pour changer la classe lors du clic
+ajouterEvenementCarte();
 
